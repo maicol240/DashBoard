@@ -1,6 +1,3 @@
-# DashBoard
-DashBoard Outline 
-Admin DashBoard 
 
 # Admin Dashboard - CSS Grid Practice
 
