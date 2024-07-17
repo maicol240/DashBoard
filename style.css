@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --border: solid black 1px;
+}
+
 body {
   display: grid;
   width: 100%;
@@ -78,22 +82,96 @@ body {
 
 .header {
   grid-area: header;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  align-items: start;
 }
 
-.search > img {
-  max-height: 30px;
+.search > .icon,
+.profile > .icon {
+  max-height: 40px;
 }
+
 .search {
-  padding: 30px;
-  padding-right: 50px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   display: grid;
-  grid-template-columns: 30px 3fr;
-  column-gap: 10px;
+  grid-template-columns: 30px minmax(200px, 900px);
+  align-items: center;
+  column-gap: 4px;
 }
 .search input {
   border-radius: 15px;
   background-color: lightgray;
+  height: 40px;
+}
+.profile {
+  display: grid;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  grid-template-columns: 50px 50px 100px;
+  grid-template-rows: auto, auto;
+}
+
+.profile > .profile-picture {
+  max-height: 40px;
+  border-radius: 50%;
+  border: var(--border);
+  justify-self: center;
+  background-color: lightblue;
+}
+
+.profile h3 {
+  align-self: center;
+  justify-self: start;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "img msg "
+    "img user";
+
+  column-gap: 20px;
+}
+.welcome > .img-greeting {
+  max-height: 90px;
+  border-radius: 50%;
+  border: var(--border);
+  background-color: lightblue;
+  grid-area: img;
+}
+
+.welcome h2 {
+  grid-area: user;
+}
+.welcome p {
+  grid-area: msg;
+  font-size: 15px;
+  font-weight: 700;
+  align-self: end;
+}
+
+.buttons {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  border-radius: 25px;
 }
