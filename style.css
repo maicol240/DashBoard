@@ -82,7 +82,7 @@ body {
 
 .header {
   grid-area: header;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr;
   display: grid;
   align-items: start;
@@ -108,13 +108,11 @@ body {
   height: 40px;
 }
 .profile {
-  display: grid;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-right: 40px;
-  grid-template-columns: 50px 50px 100px;
-  grid-template-rows: auto, auto;
+  display: flex;
+  gap: 15px;
+
+  justify-content: center;
+  padding: 20px;
 }
 
 .profile > .profile-picture {
@@ -174,4 +172,53 @@ button {
   height: 40px;
   width: 100px;
   border-radius: 25px;
+  background-color: lightblue;
+  border: var(--border);
+}
+
+.main-content {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: min-content;
+  padding: 20px 20px 0 20px;
+  gap: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-left: 12px;
+  border-left: yellow solid 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  padding-bottom: 10px;
+  font-weight: bolder;
+}
+.card-content {
+  height: 150px;
+  font-size: 18px;
+}
+
+.share {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  align-items: end;
+  margin-top: 20px;
+}
+.share > img {
+  max-height: 30px;
 }
