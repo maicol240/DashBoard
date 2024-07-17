@@ -226,6 +226,7 @@ button {
 
 .share > img {
   max-height: 30px;
+  margin: 10px;
 }
 
 .board {
